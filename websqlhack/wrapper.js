@@ -1,14 +1,8 @@
 var wrapper = {
     version: "0.1",
 
-    onSuccess: function (result) {
-        debugger
-        console.error(arguments);
-        if (result.rows.length > 0) {
-            console.log('Succesful transfer:');
-            console.log(result);
-        }
-        
+    onSuccess: function () {
+       console.error(arguments);
     }, 
 
     onError: function (transaction, error) {
