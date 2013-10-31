@@ -5,7 +5,7 @@ var storage = function () {
     var _model = function(name, fields) {
         _key = name;
         _fields = fields;
-        notification.notify('New model created', _key);
+        notification.notify('New ' + _key + ' model created');        
     };
 
     var _create = function() {
@@ -16,7 +16,7 @@ var storage = function () {
 
     var _read = function(name) {
         var repository = _get();
-        console.log((name) ? repository[name] : repository);
+        console.log((name) ? repository[name] : repository);    
         return (name) ? repository[name] : repository;
     };
 
@@ -83,7 +83,7 @@ storage.create("Palafox", {lat: 40.430109, lon: -3.700892 }, ["Batman", "Superma
 
 var cinema = storage.read("Palafox");
 
-
 console.log(cinema.position);
 
 distanceToCinema(cinema.position);
+
