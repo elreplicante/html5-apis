@@ -28,13 +28,13 @@ function toRadians(degrees) {
   return degrees * (Math.PI/180)
 }
 
-function distanceToCinema(cinemaPostion) {
+function distanceToCinema(cinemaPosition) {
     navigator.geolocation.getCurrentPosition(function(position) {
     console.log(position);
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     console.log(lat + ' ' + lon);
-    console.log(getDistance(lat, lon, cinemaPostion.lat, cinemaPostion.lon));
+    console.log(getDistance(lat, lon, cinemaPosition.lat, cinemaPosition.lon));
     });
 }
 
