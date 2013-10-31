@@ -12,12 +12,12 @@ var storage = function () {
         var repository = _get();
         repository[arguments[0]] = _createObject(arguments);
         _save(repository);
-        notification.notify('New entry' +  repository[arguments[0] + 'created ' , repository[arguments[1]]);
     };
 
     var _read = function(name) {
         var repository = _get();
         console.log((name) ? repository[name] : repository);
+        return (name) ? repository[name] : repository;
     };
 
     var _update = function() {
@@ -35,7 +35,7 @@ var storage = function () {
     };
 
     var _get = function() {
-        return JSON.parse(window.localStorage.getItem(_key));
+        return JSON.parse(window.localStorage.getItem(_key)) || {};
     };
 
     var _save = function(data) {
@@ -45,7 +45,7 @@ var storage = function () {
     var _createObject = function(properties) {
         var model = {};
         for (var index in _fields) {
-            field = _fields[index];
+            field = _fields[index]; 
             model[field] = properties[parseInt(index) + 1];
         }
         return model;
@@ -61,3 +61,29 @@ var storage = function () {
     
 }();
 
+storage.model("movies", ["year", "genre", "director", "similars"]);
+
+// Create
+storage.create("Batman", 1989, "action", "Tim Burton", ["Superman", "Spiderman"]);
+storage.create("Superman", 1982, "action", undefined, ["Batman", "Spiderman"]);
+storage.create("Amazing Spiderman", 2012, "action", "A Freak Director", ["Batman", "Superman"]);
+// Read
+storage.read();
+storage.read("Superman");
+// Update
+storage.update("Batman", 2012, "action", "Tim Burton", ["Superman", "Spiderman"]);
+storage.read("Batman");
+// Delete
+storage.drop("Amazing Spiderman");
+storage.read("Amazing Spiderman");
+storage.read();
+
+storage.model("cinemas", ["position", "movies"]);
+storage.create("Palafox", {lat: 40.430109, lon: -3.700892 }, ["Batman", "Superman"]);
+
+var cinema = storage.read("Palafox");
+
+
+console.log(cinema.position);
+
+distanceToCinema(cinema.position);

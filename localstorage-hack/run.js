@@ -1,6 +1,7 @@
-var worker = new Worker('task.js');
-worker.postMessage(['model', 'movies']);
+// var worker = new Worker('task.js');
+// worker.postMessage(['model', 'movies']);
 
-worker.addEventListener("message", function(event) {
-    console.log(event);
-});
+// worker.addEventListener("message", function(event) {
+//     console.log(event);
+// });
+
