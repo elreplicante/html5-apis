@@ -5,12 +5,14 @@ var storage = function () {
     var _model = function(name, fields) {
         _key = name;
         _fields = fields;
+        notification.notify('New model created', _key);
     };
 
     var _create = function() {
         var repository = _get();
         repository[arguments[0]] = _createObject(arguments);
         _save(repository);
+        notification.notify('New entry' +  repository[arguments[0] + 'created ' , repository[arguments[1]]);
     };
 
     var _read = function(name) {
