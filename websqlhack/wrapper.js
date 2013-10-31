@@ -1,8 +1,9 @@
 var wrapper = {
     version: "0.1",
 
-    onSuccess: function () {
-       console.error(arguments);
+    onSuccess: function (sql) {
+        console.log(sql);
+        
     }, 
 
     onError: function (transaction, error) {
@@ -10,6 +11,7 @@ var wrapper = {
     },
 
     execute: function (sql) {
+        debugger
         db.transaction(function(tx) { tx.executeSql(sql, [], this.onSuccess, this.onError); });
     },
 
