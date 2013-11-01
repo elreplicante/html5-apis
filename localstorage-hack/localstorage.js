@@ -1,10 +1,10 @@
 var storage = function () {
     _key = null;
-    _fields = [];
+    _fields = {};
 
     var _model = function(name, fields) {
         _key = name;
-        _fields = fields;
+        if (fields) _fields[_key] = fields;
         notification.notify('New ' + _key + ' model created');        
     };
 
