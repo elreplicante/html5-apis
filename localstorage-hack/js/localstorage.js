@@ -4,8 +4,7 @@ var storage = function () {
 
     var _model = function(name, fields) {
         _key = name;
-        if (fields) _fields[_key] = fields;
-        notification.notify('New ' + _key + ' model created');        
+        if (fields) _fields[_key] = fields;     
     };
 
     var _create = function() {
@@ -79,13 +78,9 @@ var storage = function () {
 // storage.read();
 
 storage.model("cinemas", ["position", "movies"]);
-
-
 storage.create("Palafox", {lat: 40.430109, lon: -3.700892 }, ["Batman", "Superman"]);
-storage.read();
-var cinema = storage.read("Palafox");
 
-console.log(cinema.position);
+var cinema = storage.read();
+distanceToCinema(cinema);
 
-distanceToCinema(cinema.position);
 

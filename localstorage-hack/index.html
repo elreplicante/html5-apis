@@ -2,28 +2,52 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+
 </head>
 <body>
-    <script type="text/javascript" src="geo.js"></script>
-    <script type="text/javascript" src="notify.js"></script>
-    <script type="text/javascript" src="localstorage.js"></script>
-    
-                
-    <script type="text/javascript" src="orientation.js"></script>
-    <div class="container">
-        <h1>The gorgeous cinema distance calculator!</h1>
-        <p>Your current location is:</p>
+    <script type="text/javascript" src="js/geo.js"></script>
+    <script type="text/javascript" src="js/localstorage.js"></script> 
+    <script type="text/javascript" src="js/orientation.js"></script> 
 
-        <div id="form" class="">
-            <input type="text" name="" value="" placeholder="" x-webkit-speech>
+    <header>
+        <nav class="top-bar">
+          <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+              <h1><a href="#">Top Bar Title </a></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+  </nav>
+</header>
+
+</header><!-- /header -->
+<div class="container">
+    <div class="row">
+        <div class="large-9 columns">
+            <h1>The gorgeous cinema distance calculator!</h1>       
+            <form id="form">
+                <input class="large-7 columns" id="cinema-name" type="text" name="cinema-name" value="" placeholder="Put here the name of the cinema" x-webkit-speech>
+                <input class="large-2 columns" type="submit" name="submit" value="Calculate distance">
+            </form>
+
+            <p>Search Results:</p>
+            <p>Your current location is: <span id="current-location"></span></p>
+            <p id="results"></p>
+
         </div>
-        <figure>
-            <img id="logo" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
-        </figure>
-    
-        
+        <div class="large-3 columns">
+            <figure>
+                <img id="logo" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
+            </figure>
+        </div>
     </div>
+</div>
 
 </body>
 </html>
