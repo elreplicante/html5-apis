@@ -1,8 +1,13 @@
+body {
+    font-family: Helvetica;
+}
+
 .container {
         max-width: 980px;
         margin: 50px auto;
+       
     }
 
 #logo {
-    
+   float: right;
 }

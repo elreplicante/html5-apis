@@ -2,9 +2,6 @@ if (navigator.geolocation) {
     console.log("Geolocation is available ");
 }
 
-function onSuccess (position) {
-    
-}
 
 function onError(error) {
     alert("Error on GPS" +  error);

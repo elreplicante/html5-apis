@@ -4,9 +4,9 @@ if (window.DeviceOrientationEvent) {
 
 function onChange(eventData) {
     
-    var tiltLR = eventData.gamma;
-    var tiltFP = eventData.beta;
-    var direction = eventData.alpha;
+    var y = eventData.gamma;
+    var x = eventData.beta;
+    var z = eventData.alpha;
 
     // console.log('tiltLR data: ' + tiltLR);
     // console.log('tiltFP data: ' + tiltFP);
@@ -14,12 +14,13 @@ function onChange(eventData) {
 
     var logo = document.querySelector('#logo');
 
-    logo.style.webkitTransform = "rotateX(" + tiltFP * 10 + "deg)";
-    logo.style.webkitTransform = "rotateY(" + tiltLR * 10 + "deg)";
-    // logo.style.webkitTransform = "rotate(" + tiltLR * 10 + "," + tiltFP * 10 + "," + direction * 10 + ",90deg)";
+    // logo.style.webkitTransform = "rotateX(" + y * 10 + "deg)";
+     //logo.style.webkitTransform = "rotateY(" + x * 10 + "deg)";
+    // logo.style.webkitTransform = "rotate(" + x * 10 + "deg," + y * 10 + "deg," + z * 10 + "deg, a)";
 
 
 }
 
 window.addEventListener('deviceorientation', onChange, false);
 
+    
