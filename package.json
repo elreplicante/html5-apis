@@ -3,8 +3,6 @@
 	"author":						"Sergio Revilla",
 	"devDependencies": {
 		"grunt-contrib-concat":		"*",
-		"grunt-git-deploy":			"*",
-		"grunt-contrib-jasmine":	"*",
 		"grunt-contrib-watch":		"*"
 	}
 }

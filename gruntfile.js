@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			},
 
 			dist: {
-				src: ['src/*.js'],
+				src: ['js/*.js'],
 				dest: 'dist/<%= pkg.name %>.js'
 			},
 
@@ -34,8 +34,6 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-git-deploy');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', ['concat']);
